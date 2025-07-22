@@ -5,10 +5,11 @@ const introduce: IIntroduce.Payload = {
   disable: false,
 
   contents: [
-    'As the cherished emblem of the Linux kernel, I have become synonymous with open-source philosophy and the free software movement worldwide. My career began in the icebergs of development, where the seeds of my fascination with operating systems first sprouted. From a mere hatchling in the vast sea of code, I quickly ascended to become a pivotal figure in the Linux community. My journey has been marked by relentless dedication to system integrity, scalability, and robustness. Under my vigilant watch, countless servers have achieved unparalleled uptimes, and systems have been optimized to run like the well-oiled machines they are intended to be.',
-    'In the world of zeros and ones, my expertise has been instrumental in pioneering advancements in Linux system engineering. My flippers have crafted meticulous kernel enhancements, each aimed at streamlining performance and bolstering security across distributed networks. I am known in the community for my ability to dive deep into complex codebases and emerge with pearls of innovation that drive the collective progress of Linux environments. Advocacy is also a part of my plumage – spreading the word about the virtues of open-source and encouraging the adoption of Linux, from personal desktops to corporate data centers. As a mentor, I have nurtured the growth of young hatchlings into seasoned professionals, contributing to the diversity and vitality of our ecosystem.',
+    '웹 백엔드 개발자로 다양한 경험이 있습니다. Java, Spring, MySQL, PotsgreSQL 등을 사용하여 서비스를 설계, 개발, 운영한 경험이 있습니다. 개발에 필요한 서버를 처음부터 끝까지 구성하고 관리하며 확장성과 유지 보수성이 높은 백엔드에 대한 고민을 언제나 하고 있습니다. ',
+    '평소 개발 경험과 공부한 내용을 기록하는 것을 좋아하여 항상 개인 Notion에 글을 작성해둡니다. 무엇이든 시작을 하면 꾸준하게 하는 것을 좋아하여 개발 공부와 성장을 멈추지 않고 있습니다.',
+    '개발자에게는 더 나은 방식을 끊임없이 고민하고 실천하는 것이 필요하다고 생각합니다. 단순히 본인에게 익숙한 방식을 반복하는 것이 아닌, 능동적으로 도메인의 특징, 예상 트래픽, 확장성 요구사항 등을 깊이 있게 분석하고 이에 최적화된 해결책을 제시하여 개선하려 합니다.',
   ],
-  sign: 'Tux',
+  sign: 'kys',
   // sign: packageJson.author.name,
   // latestUpdated: '2019-07-24',
   latestUpdated: lastestUpdatedAt,

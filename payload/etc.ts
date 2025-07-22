@@ -5,15 +5,22 @@ const etc: IEtc.Payload = {
 
   list: [
     {
-      title: 'Featured on SuperTuxKart',
-      subTitle: "Steve & Oliver Baker's",
-      startedAt: '2016-07',
+      title: 'Toss Learners High 서버 1기',
+      subTitle: 'Toss에서 진행한 멘토링을 통해 업무 몰입과 내 역량 점검',
+      startedAt: '2024-12',
+      endedAt: '2025-01',
     },
     {
-      title: "Biting Linus Torvalds' Foot",
-      subTitle: 'Australia National Zoo & Aquarium',
-      startedAt: '1993-07',
-      endedAt: '1993-08',
+      title: '그린컴퓨터학원 백엔드 개발자 과정 수료',
+      subTitle: '롯데ON 실무 개발자 멘토 과정',
+      startedAt: '2023-06',
+      endedAt: '2023-12',
+    },
+    {
+      title: '해병대 병장 만기 전역',
+      subTitle: '운전병',
+      startedAt: '2017-06',
+      endedAt: '2019-03',
     },
   ],
 };
