@@ -46,6 +46,19 @@ const project: IProject.Payload = {
           content: '마이크로서비스 아키텍처 기반 웹 애플리케이션 개발',
           weight: 'MEDIUM',
         },
+        {
+          content: '장비 모니터링 서비스 개발을 위한 전반적인 네트워크에 대한 이해 및 경험',
+          weight: 'MEDIUM',
+          descriptions: [
+            {
+              content:
+                '장비의 SNMP 프로토콜을 사용해 데이터를 가져오는 정보들을 이해하기 위해 네트워크에 대한 이해 경험',
+            },
+            {
+              content: 'Wireshark를 사용해 패킷 내용 확인',
+            },
+          ],
+        },
       ],
     },
     {
