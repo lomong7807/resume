@@ -17,6 +17,7 @@ const experience: IExperience.Payload = {
             'Jenkins를 사용한 CI/CD 파이프라인 도입 및 관리',
             '개발팀 내 표준 문서화 프로세스 도입으로 신규 입사자 온보딩 시간 50% 단축',
             'SNMP 프로토콜 기반 하드웨어 모니터링 대시보드 웹 개발',
+            '컨테이너 가상화 환경에서 마이크로서비스 아키텍처 기반의 분산 시스템 개발 및 운영 경험',
           ],
           skillKeywords: [
             'Java',
