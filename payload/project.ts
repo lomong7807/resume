@@ -113,7 +113,7 @@ const project: IProject.Payload = {
     },
     {
       title: '성당 전체 통계 모니터링 웹 개발 및 유지보수',
-      startedAt: '2025-09',
+      startedAt: '2024-09',
       endedAt: '2025-03',
       where: '라인업코리아 (LineupKorea)',
       descriptions: [
