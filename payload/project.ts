@@ -29,7 +29,7 @@ const project: IProject.Payload = {
           ],
         },
         {
-          content: 'Git, DB 컨벤션 도입.',
+          content: 'Git, DB 컨벤션 도입',
           weight: 'MEDIUM',
           descriptions: [
             {
