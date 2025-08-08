@@ -9,12 +9,6 @@ const programmingLanguages: ISkill.Skill = {
     {
       title: 'JavaScript',
     },
-    {
-      title: 'HTML/CSS',
-    },
-    {
-      title: 'jQuery',
-    },
   ],
 };
 
@@ -23,9 +17,6 @@ const frameworks: ISkill.Skill = {
   items: [
     {
       title: 'Spring Boot',
-    },
-    {
-      title: 'React.js',
     },
   ],
 };
