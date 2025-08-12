@@ -18,7 +18,7 @@ const profile: IProfile.Payload = {
     small: '(lomong)',
   },
   contact: [
-    {
+    /*     {
       title: 'lomong7807@gmail.com',
       link: 'mailto:lomong7807@gmail.com',
       icon: faEnvelope,
@@ -27,7 +27,7 @@ const profile: IProfile.Payload = {
       title: 'Please contact me by email',
       icon: faPhone,
       badge: true,
-    },
+    }, */
     {
       link: 'https://github.com/lomong7807',
       icon: faGithub,
@@ -38,7 +38,8 @@ const profile: IProfile.Payload = {
     // },
   ],
   notice: {
-    title: '이메일로 연락 부탁드립니다.',
+    // title: '이메일로 연락 부탁드립니다.',
+    title: '안녕하세요. 꾸준함이 강점인 개발자 강윤수입니다..',
     icon: faBell,
   },
 };
