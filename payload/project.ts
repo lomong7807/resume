@@ -9,54 +9,41 @@ const project: IProject.Payload = {
       where: '라인업코리아 (LineupKorea)',
       descriptions: [
         {
-          content: '데이터센터 관리 시스템 DB 설계 및 구축',
-          weight: 'MEDIUM',
-        },
-        {
-          content: '서버에서 파일을 읽어와 xml 파일로 파싱하여 DB에 저장',
-          weight: 'MEDIUM',
-          descriptions: [{ content: '서버 파일 -> XML 파싱 -> DB 저장 자동화 프로세스 개발' }],
-        },
-        {
-          content: '프레임워크 및 애플리케이션 관련 내용 문서화',
+          content: 'SNMP 기반 실시간 하드웨어 모니터링 시스템 구축',
           weight: 'MEDIUM',
           descriptions: [
-            {
-              content:
-                '신규 입사자들이 관련 정보 및  소스코드 분석에 어려움이 있어 해당 내용을 문서화',
-            },
-            { content: '해당 문서들을 통해 온보딩 시간 50% 단축' },
+            { content: '데이터센터 관리 시스템 DB 설계 및 구축' },
+            { content: '서버 파일 → XML 파싱 → DB 저장 자동화 프로세스 개발' },
+            { content: 'Wireshark를 활용한 네트워크 패킷 분석으로 SNMP 프로토콜 데이터 확인' },
           ],
         },
         {
-          content: 'Git, DB 컨벤션 도입',
+          content: '신규 입사자 온보딩 프로세스 효율화',
           weight: 'MEDIUM',
           descriptions: [
-            {
-              content:
-                'Git과 DB 컨벤션이 없어 복잡도 증가 및 타인의 작업 내용을 이해하는데 어려움이 있었음',
-            },
-            {
-              content:
-                '컨벤션 정립 및 문서 작성 도입으로 작업 복잡도 40% 감소 및 팀 커뮤니케이션 효율성 증대',
-            },
+            { content: '프레임워크 및 애플리케이션 관련 내용 체계적 문서화' },
+            { content: '소스코드 분석 가이드 및 개발 환경 설정 매뉴얼 작성' },
+            { content: '신규 입사자 온보딩 시간 50% 단축 달성' },
           ],
         },
         {
-          content: '마이크로서비스 아키텍처 기반 웹 애플리케이션 개발',
+          content: '개발팀 협업 효율성 개선을 위한 표준화 도입',
           weight: 'MEDIUM',
+          descriptions: [
+            { content: 'Git과 DB 컨벤션이 없어 발생하는 작업 복잡도 및 커뮤니케이션 이슈 해결' },
+            { content: 'Git 브랜치 전략, 커밋 메시지, DB 네이밍 컨벤션 정립 및 문서화' },
+            { content: '작업 복잡도 50% 감소 및 팀 커뮤니케이션 효율성 증대' },
+          ],
         },
         {
-          content: '장비 모니터링 서비스 개발을 위한 전반적인 네트워크에 대한 이해 및 경험',
+          content: '확장 가능한 마이크로서비스 아키텍처 기반 웹 애플리케이션 개발',
           weight: 'MEDIUM',
           descriptions: [
             {
               content:
-                '장비의 SNMP 프로토콜을 사용해 데이터를 가져오는 정보들을 이해하기 위해 네트워크에 대한 이해 경험',
+                '마이크로서비스 아키텍처 기반의 프레임워크를 활용한 장비 모니터링 서비스의 모듈화 및 독립 배포 환경 구축',
             },
-            {
-              content: 'Wireshark를 사용해 패킷 내용 확인',
-            },
+            { content: 'SNMP 프로토콜 기반 네트워크 장비 데이터 수집 및 실시간 모니터링 구현' },
           ],
         },
       ],
@@ -68,45 +55,39 @@ const project: IProject.Payload = {
       where: '라인업코리아 (LineupKorea)',
       descriptions: [
         {
-          content:
-            '기존 로컬에서 실행하던 애플리케이션과 각종 인프라들을 다른 서버에 추가 구축시 확장성을 고려하여 컨테이너 가상화 추진 및 도입',
+          content: '개발 환경 확장성 한계 해결을 위한 컨테이너 가상화 도입',
           weight: 'MEDIUM',
           descriptions: [
-            { content: 'Docker 기반 환경으로 배포 효율성 100% 향상 및 소스 관리 체계화' },
+            { content: '로컬 환경 의존성 문제 및 서버 확장 시 설정 복잡도 이슈 해결' },
+            { content: 'Docker 기반 컨테이너 환경으로 배포 효율성 100% 향상 및 환경 표준화' },
+            { content: '개발/스테이징/프로덕션 환경 일관성 보장' },
           ],
         },
         {
-          content: 'GitLab 구축 및 자동 백업 설정',
+          content: '소스코드 관리 체계화 및 안정성 확보',
           weight: 'MEDIUM',
           descriptions: [
-            { content: '자동 백업 설정으로 99.9% 소스 보존율 달성' },
-            { content: ' 백업 성공/실패, 스토리지 사용량 실시간 모니터링 자동화' },
+            { content: 'GitLab 구축 및 자동 백업 시스템 구현' },
+            { content: '백업 성공/실패, 스토리지 사용량 실시간 모니터링 자동화' },
+            { content: '99.9% 소스 보존율 달성' },
           ],
         },
         {
-          content: 'Jenkins 활용 CI/CD 파이프라인 구축',
+          content: '개발 생산성 극대화를 위한 CI/CD 파이프라인 구축',
           weight: 'MEDIUM',
           descriptions: [
-            { content: 'GitLab Webhook Trigger와 Jenkins Pipeline으로 빌드 및 배포 자동화' },
-            {
-              content:
-                '개발 서버에 작업 내용 배포 시간 95% 단축 (10분~1시간 -> 1분)으로 개발 생산성 극대화',
-            },
+            { content: '수동 배포로 인한 시간 소모 및 휴먼 에러 문제 해결' },
+            { content: 'GitLab Webhook과 Jenkins Pipeline 연동으로 빌드/배포 자동화' },
+            { content: '배포 시간 95% 단축 (10분~1시간 → 1분)으로 개발 생산성 극대화' },
           ],
         },
         {
-          content: 'Jenkins와 MS Teams 연동으로 빌드/머지 상태 실시간 알림 서비스 구현',
+          content: '팀 협업 효율성 향상을 위한 실시간 알림 시스템 구현',
           weight: 'MEDIUM',
           descriptions: [
-            {
-              content:
-                '각자 작업한 내용이 merge 되면 해당 작업 내용을 MS Teams에서 바로 확인할 수 있게끔 알림',
-            },
-            {
-              content:
-                '팀원이 작업한 내용을 간단하게 확인할 수 있게 되어 작업 효율성 증대 및 충돌 최소화',
-            },
-            { content: '개발 서버에 반영시 빌드 또는 배포에 문제가 발생하면 알림' },
+            { content: 'Jenkins와 MS Teams 연동으로 빌드/머지 상태 실시간 알림 서비스 구현' },
+            { content: '팀원 작업 내용 즉시 공유 및 충돌 최소화' },
+            { content: '빌드/배포 실패 시 즉시 알림으로 장애 대응 시간 단축' },
           ],
         },
       ],
@@ -142,39 +123,30 @@ const project: IProject.Payload = {
       where: '에듀에듀 (EduEdu)',
       descriptions: [
         {
-          content: '관리자 시스템 개발',
-          weight: 'MEDIUM',
-        },
-        {
-          content: 'JWT를 사용한 로그인 기능 개발',
+          content: '보안성 강화를 위한 이중 인증 시스템 구축',
           weight: 'MEDIUM',
           descriptions: [
-            {
-              content: 'Access Token과 Refresh Token을 사용한 인증/인가 구현으로 보안성 200% 강화',
-            },
+            { content: '기존 단일 토큰 방식의 보안 취약점 개선' },
+            { content: 'JWT Access Token과 Refresh Token을 활용한 이중 인증/인가 시스템 구현' },
+            { content: '보안성 200% 강화 및 사용자 편의성 동시 확보' },
           ],
         },
         {
-          content: 'AOP 패턴을 활용한 웹 페이지 로깅 기능 개발',
+          content: '전사 사용자 행동 추적을 위한 로깅 시스템 구현',
           weight: 'MEDIUM',
           descriptions: [
-            {
-              content:
-                'CRUD 이벤트 및 페이지 방문 기록을 모두 남기기 위해 AOP를 사용한 로깅 처리 구현',
-            },
-            { content: '페이지 방문 시 계정 정보와 간단한 정보들을 DB에 저장' },
-            { content: '이벤트 발생 시 계정 정보와 이벤트 내용 및 관련 데이터들을 DB에 저장' },
+            { content: 'AOP 패턴을 활용한 투명한 웹 페이지 로깅 시스템 개발' },
+            { content: 'CRUD 이벤트 및 페이지 방문 기록 자동 수집' },
+            { content: '사용자 행동 분석 데이터 축적으로 서비스 개선 기반 마련' },
           ],
         },
         {
-          content: 'Redis 캐시 도입으로 페이지 로드 속도 65% 개선',
+          content: '시스템 성능 최적화를 위한 캐시 전략 도입',
           weight: 'MEDIUM',
           descriptions: [
-            { content: 'Refresh Token를 캐시에서 관리하여 불필요한 DB 접근 감소' },
-            {
-              content:
-                '바뀌는 일이 잘 없는 메뉴와 같은 정적인 부분들은 캐시처리하여 페이지 로드 속도 증가 (약 1,000ms -> 3~400ms)',
-            },
+            { content: '반복적인 DB 조회로 인한 페이지 로드 지연 문제 해결' },
+            { content: 'Redis 캐시를 활용한 Refresh Token 관리 및 정적 데이터 캐싱' },
+            { content: '페이지 로드 속도 65% 개선 (1,000ms → 300~400ms)' },
           ],
         },
       ],
@@ -186,21 +158,22 @@ const project: IProject.Payload = {
       where: '에듀에듀 (EduEdu)',
       descriptions: [
         {
-          content: '관리자 시스템 기능 개선',
-          weight: 'MEDIUM',
-        },
-        {
-          content: '관리자 중심의 퀴즈 생성/관리 기능 개발',
+          content: '관리자 중심의 퀴즈 관리 시스템 구축',
           weight: 'MEDIUM',
           descriptions: [
-            { content: '관리자가 직접 퀴즈를 추가 및 생성할 수 있게끔 구현' },
-            { content: '합격/불합격 기준 및 재시험 횟수 커스터마이징 가능' },
-            { content: '강의 수강 완료자만 퀴즈 응시 가능한 체계 구축' },
+            { content: '기존 개발자 의존적인 퀴즈 생성 프로세스 개선' },
+            { content: '관리자 직접 퀴즈 생성/관리 기능 개발' },
+            { content: '합격/불합격 기준 및 재시험 횟수 커스터마이징 기능 구현' },
+            { content: '강의 수강 완료자만 퀴즈 응시 가능한 권한 체계 구축' },
           ],
         },
         {
-          content: '강의 설문조사 및 예약 서비스로 사용자 만족도 40% 향상',
+          content: '사용자 만족도 향상을 위한 피드백 시스템 도입',
           weight: 'MEDIUM',
+          descriptions: [
+            { content: '강의 설문조사 및 예약 서비스 구현' },
+            { content: '사용자 만족도 70% 향상 달성' },
+          ],
         },
       ],
     },
