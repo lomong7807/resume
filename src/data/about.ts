@@ -5,7 +5,7 @@ export const about = {
   points: [
     {
       title: 'End-to-End 백엔드',
-      body: 'Java/Spring Boot 기반 웹 애플리케이션 개발을 중심으로 MySQL·PostgreSQL 데이터베이스 설계, Redis 캐시 최적화, SNMP 프로토콜 기반 하드웨어 모니터링까지 — 도메인을 가리지 않고 확장성과 유지보수성을 고려한 시스템을 만들어 왔습니다.',
+      body: 'Java/Spring Boot 기반 웹 애플리케이션 개발을 중심으로 MySQL·PostgreSQL 데이터베이스 설계, Redis 캐시 최적화, SNMP 프로토콜 기반 하드웨어 모니터링까지, 도메인을 가리지 않고 확장성과 유지보수성을 고려한 시스템을 만들어 왔습니다.',
     },
     {
       title: '팀 전체의 생산성',

@@ -12,7 +12,7 @@ export const education: TimelineItem[] = [
 export const etc: TimelineItem[] = [
   {
     title: 'Toss Learners High 서버 1기',
-    detail: 'Toss에서 진행한 멘토링 — 업무 몰입과 역량 점검',
+    detail: 'Toss에서 진행한 멘토링, 업무 몰입과 역량 점검',
     start: '2024-12',
     end: '2025-01',
   },

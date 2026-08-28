@@ -1,4 +1,4 @@
-# 강윤수 — 포트폴리오
+# 강윤수 포트폴리오
 
 Backend & DevOps Engineer 강윤수의 포트폴리오 사이트입니다.
 
@@ -6,9 +6,9 @@ Backend & DevOps Engineer 강윤수의 포트폴리오 사이트입니다.
 
 ## 기술 구성
 
-- [Astro 5](https://astro.build) + TypeScript — 정적 단일 페이지
+- [Astro 5](https://astro.build) + TypeScript, 정적 단일 페이지
 - GitHub Actions → GitHub Pages 자동 배포 (`main` 푸시 시)
-- 콘텐츠는 전부 `src/data/*.ts`에 분리 — 마크업을 건드리지 않고 데이터 파일만 수정하면 됩니다
+- 콘텐츠는 전부 `src/data/*.ts`에 분리되어 있어, 마크업을 건드리지 않고 데이터 파일만 수정하면 됩니다
 
 ## 콘텐츠 수정
 

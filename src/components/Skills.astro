@@ -3,25 +3,18 @@ import Section from './Section.astro';
 import { skills } from '../data/skills';
 ---
 
-<Section
-  id="skills"
-  overline="SKILLS"
-  title="기술 스택"
-  desc="강조 표시된 항목이 실무에서 주력으로 사용하는 기술입니다."
->
+<Section id="skills" title="기술 스택">
   <ul class="skill-list">
-    {skills.map((category, i) => (
-      <li class="skill-row reveal" style={`--reveal-delay: ${i * 80}ms`}>
+    {skills.map((category) => (
+      <li class="skill-row reveal">
         <h3 class="skill-category">{category.name}</h3>
-        <ul class="skill-chips">
-          {category.items.map((item) => (
-            <li>
-              <span class:list={['chip', { 'chip--accent': item.primary }]}>
-                {item.name}
-              </span>
-            </li>
+        <p class="skill-items">
+          {category.items.map((item, i) => (
+            <>
+              <span class:list={[{ 'is-primary': item.primary }]}>{item.name}</span>{i < category.items.length - 1 && ', '}
+            </>
           ))}
-        </ul>
+        </p>
       </li>
     ))}
   </ul>
@@ -30,10 +23,10 @@ import { skills } from '../data/skills';
 <style>
   .skill-row {
     display: grid;
-    grid-template-columns: 10rem 1fr;
+    grid-template-columns: 9rem 1fr;
     gap: 1.5rem;
-    align-items: start;
-    padding-block: 1.35rem;
+    align-items: baseline;
+    padding-block: 1.1rem;
   }
 
   .skill-row:first-child {
@@ -45,31 +38,27 @@ import { skills } from '../data/skills';
   }
 
   .skill-category {
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-muted);
-    /* 칩 텍스트와 첫 줄 시각 정렬 */
-    padding-top: 0.2rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--ink);
   }
 
-  .skill-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.45rem;
+  .skill-items {
+    color: var(--ink-muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .skill-items .is-primary {
+    color: var(--ink);
+    font-weight: 600;
   }
 
   @media (max-width: 760px) {
     .skill-row {
       grid-template-columns: 1fr;
-      gap: 0.7rem;
-      padding-block: 1.15rem;
-    }
-
-    .skill-category {
-      padding-top: 0;
+      gap: 0.35rem;
+      padding-block: 0.95rem;
     }
   }
 </style>

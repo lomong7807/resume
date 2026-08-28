@@ -1,20 +1,17 @@
 ---
 interface Props {
   id: string;
-  overline: string;
   title: string;
-  desc?: string;
 }
 
-const { id, overline, title, desc } = Astro.props;
+const { id, title } = Astro.props;
 ---
 
 <section class="section" id={id}>
   <div class="container">
     <header class="section-head reveal">
-      <span class="overline">{overline}</span>
       <h2 class="section-title">{title}</h2>
-      {desc && <p class="section-desc">{desc}</p>}
+      <slot name="head-meta" />
     </header>
     <slot />
   </div>

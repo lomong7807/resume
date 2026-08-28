@@ -2,11 +2,11 @@ import type { SkillCategory } from './types';
 
 export const skills: SkillCategory[] = [
   {
-    name: 'Languages',
+    name: '언어',
     items: [{ name: 'Java', primary: true }, { name: 'JavaScript' }],
   },
   {
-    name: 'Backend',
+    name: '백엔드',
     items: [
       { name: 'Spring Boot', primary: true },
       { name: 'JPA' },
@@ -14,7 +14,7 @@ export const skills: SkillCategory[] = [
     ],
   },
   {
-    name: 'Infra & Database',
+    name: '인프라·DB',
     items: [
       { name: 'Docker', primary: true },
       { name: 'Jenkins', primary: true },
@@ -30,7 +30,7 @@ export const skills: SkillCategory[] = [
     ],
   },
   {
-    name: 'Tools',
+    name: '도구',
     items: [
       { name: 'IntelliJ' },
       { name: 'VS Code' },

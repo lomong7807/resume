@@ -8,20 +8,20 @@ const groups: { label: string; items: TimelineItem[] }[] = [
   { label: '활동·기타', items: etc },
 ];
 
-/** 'YYYY-MM' 데이터를 'YYYY.MM — YYYY.MM' 표기로 변환한다. */
+/** 'YYYY-MM' 데이터를 'YYYY.MM - YYYY.MM' 표기로 변환한다. */
 const period = ({ start, end }: TimelineItem) =>
-  `${start.replace('-', '.')} — ${end.replace('-', '.')}`;
+  `${start.replace('-', '.')} - ${end.replace('-', '.')}`;
 ---
 
-<Section id="education" overline="EDUCATION & ETC" title="학력 및 활동">
+<Section id="education" title="학력 및 활동">
   {groups.map((group) => (
     <div class="tl-group">
       <h3 class="tl-group-title reveal">{group.label}</h3>
       <ul>
-        {group.items.map((item, i) => (
-          <li class="tl-row reveal" style={`--reveal-delay: ${i * 80}ms`}>
-            <span class="meta tl-period">{period(item)}</span>
-            <div class="tl-body">
+        {group.items.map((item) => (
+          <li class="tl-row reveal">
+            <span class="meta">{period(item)}</span>
+            <div>
               <h4 class="tl-title">{item.title}</h4>
               <p class="tl-detail">{item.detail}</p>
             </div>
@@ -34,25 +34,24 @@ const period = ({ start, end }: TimelineItem) =>
 
 <style>
   .tl-group + .tl-group {
-    margin-top: 2.5rem;
+    margin-top: 2.25rem;
   }
 
   .tl-group-title {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-muted);
-    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
   }
 
   .tl-row {
     display: grid;
-    grid-template-columns: 13rem 1fr;
+    grid-template-columns: 12rem 1fr;
     gap: 1.5rem;
     align-items: baseline;
-    padding-block: 1rem;
+    padding-block: 0.95rem;
+  }
+
+  .tl-row:not(:last-child) {
     border-bottom: 1px solid var(--line);
   }
 
@@ -63,7 +62,7 @@ const period = ({ start, end }: TimelineItem) =>
   }
 
   .tl-detail {
-    margin-top: 0.2rem;
+    margin-top: 0.15rem;
     font-size: 0.9rem;
     color: var(--ink-muted);
   }
@@ -71,7 +70,7 @@ const period = ({ start, end }: TimelineItem) =>
   @media (max-width: 760px) {
     .tl-row {
       grid-template-columns: 1fr;
-      gap: 0.3rem;
+      gap: 0.25rem;
     }
   }
 </style>

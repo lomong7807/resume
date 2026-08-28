@@ -5,7 +5,7 @@ import { profile } from '../data/profile';
 <footer class="site-footer">
   <div class="container">
     <div class="footer-top reveal">
-      <div class="footer-identity">
+      <div>
         <p class="footer-name">{profile.name}</p>
         <p class="footer-role">{profile.role}</p>
       </div>
@@ -18,7 +18,7 @@ import { profile } from '../data/profile';
       </ul>
     </div>
 
-    <p class="footer-note reveal" style="--reveal-delay: 80ms">
+    <p class="footer-note reveal">
       이 사이트는 Astro로 직접 설계·제작했으며 GitHub Pages로 배포됩니다.
       <a href="https://github.com/lomong7807/resume" target="_blank" rel="noopener noreferrer">
         소스 보기
@@ -42,8 +42,7 @@ import { profile } from '../data/profile';
   }
 
   .footer-name {
-    font-family: var(--font-serif);
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 700;
     line-height: 1.4;
   }
@@ -56,14 +55,12 @@ import { profile } from '../data/profile';
   .footer-links {
     display: flex;
     gap: 1.25rem;
-    /* 이름 첫 줄과 시각 정렬 */
-    padding-top: 0.35rem;
+    padding-top: 0.15rem;
   }
 
   .footer-links a {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    letter-spacing: 0.04em;
+    font-size: 0.88rem;
+    font-weight: 500;
     color: var(--ink-muted);
     transition: color 150ms ease;
   }
@@ -74,7 +71,7 @@ import { profile } from '../data/profile';
 
   .footer-note {
     margin-top: 2rem;
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     color: var(--ink-muted);
   }
 
@@ -82,10 +79,6 @@ import { profile } from '../data/profile';
     .footer-top {
       flex-direction: column;
       gap: 1.25rem;
-    }
-
-    .footer-links {
-      padding-top: 0;
     }
   }
 

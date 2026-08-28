@@ -2,11 +2,11 @@
 import { profile } from '../data/profile';
 
 const items = [
-  { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#education', label: 'Education' },
+  { href: '#about', label: '소개' },
+  { href: '#skills', label: '기술' },
+  { href: '#experience', label: '경력' },
+  { href: '#projects', label: '프로젝트' },
+  { href: '#education', label: '학력·활동' },
 ];
 ---
 
@@ -26,7 +26,7 @@ const items = [
     position: sticky;
     top: 0;
     z-index: 10;
-    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    background: color-mix(in srgb, var(--bg) 85%, transparent);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
@@ -41,9 +41,9 @@ const items = [
   }
 
   .brand {
-    font-family: var(--font-serif);
     font-weight: 700;
-    font-size: 1.05rem;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
     color: var(--ink);
     flex-shrink: 0;
   }
@@ -54,7 +54,7 @@ const items = [
 
   .nav-links {
     display: flex;
-    gap: 0.25rem;
+    gap: 1.4rem;
     overflow-x: auto;
     scrollbar-width: none;
   }
@@ -65,33 +65,28 @@ const items = [
 
   .nav-links a {
     display: block;
-    padding: 0.35rem 0.7rem;
-    border-radius: var(--radius-sm);
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    letter-spacing: 0.05em;
+    padding-block: 0.35rem;
+    font-size: 0.88rem;
+    font-weight: 500;
     color: var(--ink-muted);
     white-space: nowrap;
-    transition: color 150ms ease, background 150ms ease;
+    border-bottom: 2px solid transparent;
+    transition: color 150ms ease, border-color 150ms ease;
   }
 
   .nav-links a:hover {
     color: var(--ink);
     text-decoration: none;
-    background: var(--wash-warm);
   }
 
   .nav-links a.is-active {
-    color: var(--accent-deep);
-    background: var(--accent-wash);
+    color: var(--ink);
+    border-bottom-color: var(--accent);
   }
 
   @media (max-width: 760px) {
-    /* 가로 스크롤 가능함을 알리는 우측 페이드 힌트 */
     .nav-links {
-      -webkit-mask-image: linear-gradient(to right, #000 88%, transparent);
-      mask-image: linear-gradient(to right, #000 88%, transparent);
-      padding-right: 0.75rem;
+      gap: 1rem;
     }
   }
 </style>

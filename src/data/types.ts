@@ -3,13 +3,6 @@ export interface ExternalLink {
   url: string;
 }
 
-export interface Metric {
-  value: string;
-  suffix: string;
-  label: string;
-  basis: string;
-}
-
 export interface AboutPoint {
   title: string;
   body: string;
