@@ -85,4 +85,13 @@ const items = [
     color: var(--accent-deep);
     background: var(--accent-wash);
   }
+
+  @media (max-width: 760px) {
+    /* 가로 스크롤 가능함을 알리는 우측 페이드 힌트 */
+    .nav-links {
+      -webkit-mask-image: linear-gradient(to right, #000 88%, transparent);
+      mask-image: linear-gradient(to right, #000 88%, transparent);
+      padding-right: 0.75rem;
+    }
+  }
 </style>

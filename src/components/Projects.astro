@@ -1,0 +1,251 @@
+---
+import Section from './Section.astro';
+import { companyProjects, sideProjects } from '../data/projects';
+
+/** YYYY-MM → YYYY.MM, end가 null이면 "진행 중" */
+const ym = (value: string) => value.replace('-', '.');
+const period = (start: string, end: string | null) => `${ym(start)} — ${end ? ym(end) : '진행 중'}`;
+---
+
+<Section
+  id="projects"
+  overline="PROJECTS"
+  title="프로젝트"
+  desc="회사 프로젝트는 문제 — 해결 — 성과 순서로 정리했습니다."
+>
+  <ul class="proj-stack">
+    {companyProjects.map((project, i) => (
+      <li class="proj card reveal" style={`--reveal-delay: ${i * 80}ms`}>
+        <header class="proj-head">
+          <h3 class="proj-name">{project.name}</h3>
+          <span class="meta proj-meta">{project.org} · {period(project.start, project.end)}</span>
+        </header>
+
+        <div class="proj-block">
+          <h4 class="proj-label">문제</h4>
+          <p class="proj-problem">{project.problem}</p>
+        </div>
+
+        <div class="proj-block">
+          <h4 class="proj-label">해결</h4>
+          <ul class="bullets">
+            {project.solution.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="proj-block">
+          <h4 class="proj-label">성과</h4>
+          <ul class="proj-outcome">
+            {project.outcome.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+
+        <ul class="proj-tech">
+          {project.tech.map((tech) => (
+            <li class="chip">{tech}</li>
+          ))}
+        </ul>
+      </li>
+    ))}
+  </ul>
+
+  {sideProjects.length > 0 && (
+    <div class="side">
+      <header class="side-head reveal">
+        <h3 class="side-title">Side Projects</h3>
+        <p class="side-desc">
+          학습·협업 목적의 사이드 프로젝트입니다. 코드는 GitHub에서 확인할 수 있습니다.
+        </p>
+      </header>
+
+      <ul class="side-grid">
+        {sideProjects.map((project, i) => (
+          <li class="side-item card reveal" style={`--reveal-delay: ${i * 80}ms`}>
+            <h4 class="side-name">{project.name}</h4>
+            <span class="meta">{project.period}</span>
+            <p class="side-body">{project.description}</p>
+            <p class="side-role">{project.role}</p>
+            <ul class="proj-tech">
+              {project.tech.map((tech) => (
+                <li class="chip">{tech}</li>
+              ))}
+            </ul>
+            <a class="side-link" href={project.repo} target="_blank" rel="noopener noreferrer">
+              GitHub ↗
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+</Section>
+
+<style>
+  /* ── 회사 프로젝트 ── */
+  .proj-stack {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .proj {
+    padding: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .proj-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .proj-name {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+  }
+
+  .proj-meta {
+    flex-shrink: 0;
+  }
+
+  .proj-block + .proj-block {
+    margin-top: 1.25rem;
+  }
+
+  .proj-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .proj-problem {
+    color: var(--ink-soft);
+  }
+
+  .proj-outcome {
+    background: var(--accent-wash);
+    border-radius: var(--radius-sm);
+    padding: 0.85rem 1.1rem;
+  }
+
+  .proj-outcome li {
+    position: relative;
+    padding-left: 0.9rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--accent-deep);
+  }
+
+  .proj-outcome li + li {
+    margin-top: 0.35rem;
+  }
+
+  .proj-outcome li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.68em;
+    width: 0.4rem;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .proj-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 1.35rem;
+  }
+
+  /* ── 사이드 프로젝트 ── */
+  .side {
+    margin-top: clamp(2.75rem, 6vw, 4rem);
+  }
+
+  .side-head {
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--line);
+    margin-bottom: 1.5rem;
+  }
+
+  .side-title {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .side-desc {
+    margin-top: 0.35rem;
+    font-size: 0.92rem;
+    color: var(--ink-muted);
+  }
+
+  .side-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .side-item {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .side-name {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.15rem;
+  }
+
+  .side-body {
+    margin-top: 0.6rem;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+
+  .side-role {
+    margin-top: 0.35rem;
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+  }
+
+  .side-item .proj-tech {
+    margin-top: 0.9rem;
+  }
+
+  .side-link {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent);
+    margin-top: auto;
+    padding-top: 1rem;
+  }
+
+  @media (max-width: 760px) {
+    .proj-head {
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .side-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

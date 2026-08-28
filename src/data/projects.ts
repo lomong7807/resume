@@ -86,5 +86,23 @@ export const companyProjects: CompanyProject[] = [
   },
 ];
 
-// 사이드 프로젝트 — 저장소 조사 후 채움
-export const sideProjects: SideProject[] = [];
+export const sideProjects: SideProject[] = [
+  {
+    name: 'LotteON',
+    description:
+      '여러 입점 업체의 상품을 검색·비교하고 장바구니에 담아 구매하는 멀티 벤더 커머스 플랫폼. JPA와 MyBatis를 역할별로 분리해 병행 사용했습니다.',
+    period: '2023.10 — 2023.11',
+    role: '4인 팀 프로젝트 팀장 — 상품 도메인 전담 (상세·검색·장바구니·주문), 전체 커밋의 65% 기여',
+    tech: ['Java 17', 'Spring Boot 3', 'Spring Security', 'JPA', 'MyBatis', 'Thymeleaf', 'MySQL'],
+    repo: 'https://github.com/lomong7807/LotteON',
+  },
+  {
+    name: 'HelloWorld',
+    description:
+      '지식 공유 게시판·채용 공고·강의 수강을 묶은 개발자 커뮤니티 플랫폼. 댓글·대댓글은 자기참조 구조와 소프트 삭제로 트리가 끊기지 않게 설계했습니다.',
+    period: '2023.11 — 2023.12',
+    role: '4인 팀 프로젝트 — 커뮤니티 도메인 담당 (게시물 상세, 댓글·대댓글, 글 검색)',
+    tech: ['Java 17', 'Spring Boot 3', 'JPA', 'QueryDSL', 'JWT', 'React', 'TypeScript'],
+    repo: 'https://github.com/lomong7807/HelloWorld',
+  },
+];
