@@ -16,28 +16,21 @@ const period = (start: string, end: string | null) => `${ym(start)} - ${end ? ym
           <span class="meta">{project.org} · {period(project.start, project.end)}</span>
         </header>
 
-        <div class="proj-block">
-          <h4 class="proj-label">문제</h4>
-          <p class="proj-problem">{project.problem}</p>
-        </div>
+        <p class="proj-summary">{project.summary}</p>
 
-        <div class="proj-block">
-          <h4 class="proj-label">해결</h4>
-          <ul class="bullets">
-            {project.solution.map((item) => (
-              <li>{item}</li>
-            ))}
-          </ul>
-        </div>
+        <ul class="bullets">
+          {project.work.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
 
-        <div class="proj-block">
-          <h4 class="proj-label">성과</h4>
+        {project.outcome && (
           <ul class="proj-outcome">
             {project.outcome.map((item) => (
               <li>{item}</li>
             ))}
           </ul>
-        </div>
+        )}
 
         <p class="tech-line">{project.tech.join(', ')}</p>
       </li>
@@ -96,19 +89,14 @@ const period = (start: string, end: string | null) => `${ym(start)} - ${end ? ym
     line-height: 1.35;
   }
 
-  .proj-block + .proj-block {
-    margin-top: 1.1rem;
-  }
-
-  .proj-label {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--ink);
-    margin-bottom: 0.4rem;
-  }
-
-  .proj-problem {
+  .proj-summary {
     color: var(--ink-soft);
+    max-width: 42rem;
+    margin-bottom: 1rem;
+  }
+
+  .proj-outcome {
+    margin-top: 0.9rem;
   }
 
   .proj-outcome li {
@@ -118,9 +106,8 @@ const period = (start: string, end: string | null) => `${ym(start)} - ${end ? ym
     font-variant-numeric: tabular-nums;
   }
 
-  .proj > .tech-line,
-  .proj .proj-block ~ .tech-line {
-    margin-top: 1.25rem;
+  .proj .tech-line {
+    margin-top: 1.1rem;
   }
 
   /* ── 사이드 프로젝트 ── */

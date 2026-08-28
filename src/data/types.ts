@@ -38,9 +38,12 @@ export interface CompanyProject {
   org: string;
   start: string;
   end: string | null;
-  problem: string;
-  solution: string[];
-  outcome: string[];
+  /** 무엇을 한 프로젝트인지 1~2문장. 문제에서 출발한 프로젝트는 그 맥락을 자연스럽게 녹인다 */
+  summary: string;
+  /** 주요 작업 */
+  work: string[];
+  /** 실제 성과가 있는 프로젝트에만 */
+  outcome?: string[];
   tech: string[];
 }
 
