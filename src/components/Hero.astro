@@ -1,0 +1,193 @@
+---
+import { profile } from '../data/profile';
+import { metrics } from '../data/metrics';
+import { withBase } from '../lib/url';
+---
+
+<header class="hero" id="top">
+  <div class="container">
+    <div class="hero-top reveal">
+      <div class="hero-text">
+        <span class="overline">{profile.role}</span>
+        <h1 class="hero-name">
+          {profile.name}
+          <span class="hero-alias">{profile.alias}</span>
+        </h1>
+        <p class="hero-tagline">{profile.tagline}</p>
+        <div class="hero-links">
+          {profile.links.map((link, i) => (
+            <a
+              class:list={['btn', { 'btn--solid': i === 0 }]}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
+      <img
+        class="hero-photo"
+        src={withBase(profile.photo)}
+        alt={`${profile.name} 프로필 사진`}
+        width="480"
+        height="640"
+        fetchpriority="high"
+      />
+    </div>
+
+    <ul class="metric-grid">
+      {metrics.map((metric, i) => (
+        <li class="metric card reveal" style={`--reveal-delay: ${i * 80}ms`}>
+          <span class="metric-value">
+            {metric.value}<span class="metric-suffix">{metric.suffix}</span>
+          </span>
+          <span class="metric-label">{metric.label}</span>
+          <span class="metric-basis">{metric.basis}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</header>
+
+<style>
+  .hero {
+    padding-block: clamp(4rem, 10vw, 7rem) clamp(3.5rem, 8vw, 5.5rem);
+    background:
+      radial-gradient(60rem 30rem at 85% -10%, rgba(49, 97, 143, 0.05), transparent 65%),
+      radial-gradient(40rem 24rem at 0% 110%, rgba(180, 160, 120, 0.05), transparent 60%);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2.5rem;
+  }
+
+  .hero-name {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 7vw, 3.6rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-alias {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--ink-muted);
+    letter-spacing: 0.04em;
+  }
+
+  .hero-tagline {
+    margin-top: 1.1rem;
+    max-width: 33rem;
+    font-size: 1.06rem;
+    color: var(--ink-soft);
+  }
+
+  .hero-links {
+    margin-top: 1.75rem;
+    display: flex;
+    gap: 0.6rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.55rem 1.15rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--line-strong);
+    background: var(--surface);
+    color: var(--ink);
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: background 150ms ease, transform 150ms ease, border-color 150ms ease;
+  }
+
+  .btn:hover {
+    text-decoration: none;
+    border-color: var(--ink-muted);
+  }
+
+  .btn:active {
+    transform: scale(0.98);
+  }
+
+  .btn--solid {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--bg);
+  }
+
+  .btn--solid:hover {
+    background: var(--ink-soft);
+    border-color: var(--ink-soft);
+  }
+
+  .hero-photo {
+    width: clamp(6.5rem, 14vw, 9rem);
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    flex-shrink: 0;
+  }
+
+  .metric-grid {
+    margin-top: clamp(2.5rem, 6vw, 4rem);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.85rem;
+  }
+
+  .metric {
+    padding: 1.15rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .metric-value {
+    font-family: var(--font-mono);
+    font-size: clamp(1.7rem, 3.5vw, 2.1rem);
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.2;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .metric-suffix {
+    font-size: 0.6em;
+    margin-left: 0.08em;
+  }
+
+  .metric-label {
+    font-weight: 600;
+    font-size: 0.92rem;
+  }
+
+  .metric-basis {
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 760px) {
+    .hero-top {
+      flex-direction: column-reverse;
+    }
+
+    .metric-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

@@ -1,0 +1,88 @@
+---
+import { profile } from '../data/profile';
+
+const items = [
+  { href: '#about', label: 'About' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#education', label: 'Education' },
+];
+---
+
+<nav class="site-nav" aria-label="섹션 이동">
+  <div class="container nav-inner">
+    <a class="brand" href="#top">{profile.name}</a>
+    <ul class="nav-links">
+      {items.map((item) => (
+        <li><a href={item.href}>{item.label}</a></li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    height: 3.5rem;
+  }
+
+  .brand {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--ink);
+    flex-shrink: 0;
+  }
+
+  .brand:hover {
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 0.25rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.35rem 0.7rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    color: var(--ink-muted);
+    white-space: nowrap;
+    transition: color 150ms ease, background 150ms ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--ink);
+    text-decoration: none;
+    background: var(--wash-warm);
+  }
+
+  .nav-links a.is-active {
+    color: var(--accent-deep);
+    background: var(--accent-wash);
+  }
+</style>

@@ -1,0 +1,90 @@
+---
+import '../styles/global.css';
+import { withBase } from '../lib/url';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const ogImage = new URL(withBase('og.png'), Astro.site);
+const canonical = new URL(withBase(''), Astro.site);
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href={withBase('favicon.ico')} sizes="any" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&display=swap"
+    />
+
+    <script is:inline>
+      // no-JS 환경에서도 콘텐츠가 보이도록, JS 실행 시에만 reveal 애니메이션 활성화
+      document.documentElement.classList.add('js');
+    </script>
+  </head>
+  <body>
+    <slot />
+
+    <script>
+      // 스크롤 진입 애니메이션
+      const revealed = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              io.unobserve(entry.target);
+            }
+          }
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -8% 0px' }
+      );
+      revealed.forEach((el) => io.observe(el));
+
+      // 네비 스크롤 스파이
+      const navLinks = document.querySelectorAll<HTMLAnchorElement>('.site-nav a[href^="#"]');
+      const sections = [...navLinks]
+        .map((link) => document.getElementById(link.hash.slice(1)))
+        .filter((s): s is HTMLElement => s !== null);
+
+      if (sections.length > 0) {
+        const spy = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (!entry.isIntersecting) continue;
+              navLinks.forEach((link) =>
+                link.classList.toggle('is-active', link.hash === `#${entry.target.id}`)
+              );
+            }
+          },
+          { rootMargin: '-40% 0px -55% 0px' }
+        );
+        sections.forEach((s) => spy.observe(s));
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+---
+import Section from './Section.astro';
+import { skills } from '../data/skills';
+---
+
+<Section
+  id="skills"
+  overline="SKILLS"
+  title="기술 스택"
+  desc="강조 표시된 항목이 실무에서 주력으로 사용하는 기술입니다."
+>
+  <ul class="skill-list">
+    {skills.map((category, i) => (
+      <li class="skill-row reveal" style={`--reveal-delay: ${i * 80}ms`}>
+        <h3 class="skill-category">{category.name}</h3>
+        <ul class="skill-chips">
+          {category.items.map((item) => (
+            <li>
+              <span class:list={['chip', { 'chip--accent': item.primary }]}>
+                {item.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </li>
+    ))}
+  </ul>
+</Section>
+
+<style>
+  .skill-row {
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    padding-block: 1.35rem;
+  }
+
+  .skill-row:first-child {
+    padding-top: 0;
+  }
+
+  .skill-row:not(:last-child) {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .skill-category {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    /* 칩 텍스트와 첫 줄 시각 정렬 */
+    padding-top: 0.2rem;
+  }
+
+  .skill-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  @media (max-width: 760px) {
+    .skill-row {
+      grid-template-columns: 1fr;
+      gap: 0.7rem;
+      padding-block: 1.15rem;
+    }
+
+    .skill-category {
+      padding-top: 0;
+    }
+  }
+</style>
