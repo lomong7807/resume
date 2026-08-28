@@ -28,10 +28,11 @@ import { profile } from '../data/profile';
 </footer>
 
 <style>
+  /* 다크 클로징 밴드 — 페이지를 닫는 프레임 */
   .site-footer {
-    border-top: 1px solid var(--line);
-    background: var(--wash-warm);
-    padding-block: clamp(2.5rem, 6vw, 3.25rem);
+    background: var(--ink);
+    color: #e8eaed;
+    padding-block: clamp(2.75rem, 6vw, 3.5rem);
   }
 
   .footer-top {
@@ -42,14 +43,15 @@ import { profile } from '../data/profile';
   }
 
   .footer-name {
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 700;
     line-height: 1.4;
+    color: #ffffff;
   }
 
   .footer-role {
     font-size: 0.85rem;
-    color: var(--ink-muted);
+    color: #9aa1a9;
   }
 
   .footer-links {
@@ -60,19 +62,23 @@ import { profile } from '../data/profile';
 
   .footer-links a {
     font-size: 0.88rem;
-    font-weight: 500;
-    color: var(--ink-muted);
+    font-weight: 600;
+    color: #9db8f7;
     transition: color 150ms ease;
   }
 
   .footer-links a:hover {
-    color: var(--ink);
+    color: #ffffff;
   }
 
   .footer-note {
     margin-top: 2rem;
     font-size: 0.8rem;
-    color: var(--ink-muted);
+    color: #9aa1a9;
+  }
+
+  .footer-note a {
+    color: #9db8f7;
   }
 
   @media (max-width: 760px) {
@@ -85,6 +91,13 @@ import { profile } from '../data/profile';
   @media (prefers-reduced-motion: reduce) {
     .footer-links a {
       transition: none;
+    }
+  }
+
+  @media print {
+    .site-footer {
+      background: #fff;
+      color: var(--ink);
     }
   }
 </style>

@@ -3,17 +3,18 @@
    Typography: Pretendard only. Hierarchy by weight and size.
    ============================================================ */
 :root {
-  /* color */
-  --bg: #fbfbfa;
+  /* color — pure monochrome + electric cobalt pop */
+  --bg: #ffffff;
+  --bg-soft: #f6f8fa;
   --surface: #ffffff;
-  --ink: #1c1b19;
-  --ink-soft: #4c4a45;
-  --ink-muted: #79756d;
-  --line: #e9e6e0;
-  --line-strong: #d9d5cd;
-  --accent: #31618f;
-  --accent-deep: #274d72;
-  --wash-warm: #f6f5f2;
+  --ink: #101112;
+  --ink-soft: #3f4247;
+  --ink-muted: #6b7076;
+  --line: #e5e8ec;
+  --line-strong: #cfd5db;
+  --accent: #2563eb;
+  --accent-deep: #1d4ed8;
+  --accent-wash: #eef3fe;
 
   /* type */
   --font-sans: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont,
@@ -76,7 +77,7 @@ ul {
 }
 
 ::selection {
-  background: var(--wash-warm);
+  background: var(--accent-wash);
   color: var(--accent-deep);
 }
 
@@ -95,6 +96,11 @@ ul {
 
 .section + .section {
   border-top: 1px solid var(--line);
+}
+
+/* 차분한 섹션에 쿨 틴트를 깔아 스크롤 리듬을 만든다 */
+.section--tint {
+  background: var(--bg-soft);
 }
 
 .section-head {

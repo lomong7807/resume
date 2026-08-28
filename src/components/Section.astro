@@ -2,12 +2,13 @@
 interface Props {
   id: string;
   title: string;
+  tint?: boolean;
 }
 
-const { id, title } = Astro.props;
+const { id, title, tint = false } = Astro.props;
 ---
 
-<section class="section" id={id}>
+<section class:list={['section', { 'section--tint': tint }]} id={id}>
   <div class="container">
     <header class="section-head reveal">
       <h2 class="section-title">{title}</h2>

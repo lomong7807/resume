@@ -13,7 +13,7 @@ const period = ({ start, end }: TimelineItem) =>
   `${start.replace('-', '.')} - ${end.replace('-', '.')}`;
 ---
 
-<Section id="education" title="학력 및 활동">
+<Section id="education" title="학력 및 활동" tint>
   {groups.map((group) => (
     <div class="tl-group">
       <h3 class="tl-group-title reveal">{group.label}</h3>
