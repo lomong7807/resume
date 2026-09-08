@@ -43,6 +43,8 @@ export const companyProjects: CompanyProject[] = [
       'GitLab과 Jenkins를 온프레미스로 자체 구축: 하드웨어 유통·솔루션 회사라 사내 서버를 쉽게 확보할 수 있어, 클라우드 비용 없이 내부망 안에서 소스와 빌드를 관리',
       'GitLab Webhook + Jenkins Pipeline으로 빌드·배포 자동화, 저장소 자동 백업과 백업 성공·실패·스토리지 사용량 모니터링',
       'Jenkins 빌드·머지 알림을 MS Teams로 연동: 회사 표준 협업 도구라 별도 채널 없이 팀 전체가 즉시 확인',
+      '표준 문서화 프로세스 도입: 프레임워크·애플리케이션 문서와 개발 환경 설정 매뉴얼을 정리해 신규 입사자 온보딩 시간 단축',
+      'Git 브랜치 전략·커밋 메시지·DB 네이밍 컨벤션 정립: 컨벤션 부재로 생기던 작업 복잡도와 커뮤니케이션 이슈 해소',
     ],
     outcome: ['배포 시간 단축 (20분~1시간 → 10분)', '소스 보존율 99.9% 달성'],
     tech: ['Docker', 'GitLab', 'Jenkins', 'Linux', 'nginx'],
@@ -74,6 +76,7 @@ export const companyProjects: CompanyProject[] = [
       'Refresh Token을 Redis에서 관리: 추후 서버 스케일 아웃 시 인스턴스 간 세션 공유가 가능하도록',
       '정적 데이터 Redis 캐싱: 반복적인 DB 조회가 페이지 로드 지연의 원인이었기 때문에',
       'AOP 기반 전사 페이지 로깅: 각 화면 코드를 수정하지 않고 CRUD 이벤트·방문 기록을 일괄 수집',
+      'RESTful API 아키텍처 구축: 20건이 넘는 신규 요구사항을 기존 구조를 흔들지 않고 반영',
     ],
     outcome: [
       '페이지 로드 속도 65% 개선 (1,000ms → 300~400ms)',

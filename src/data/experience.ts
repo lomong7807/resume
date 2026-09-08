@@ -1,5 +1,6 @@
 import type { Experience } from './types';
 
+// 경력은 업무 개요만 간략히. 구체적인 문제·기술·성과는 projects.ts에서 다룬다.
 export const experiences: Experience[] = [
   {
     company: '라인업코리아',
@@ -9,12 +10,10 @@ export const experiences: Experience[] = [
     end: null,
     summary: '하드웨어 모니터링 솔루션 개발과 개발팀 인프라 환경 구축·운영 총괄',
     highlights: [
-      'GitLab·Jenkins 기반 CI/CD 파이프라인 구축으로 배포 시간 단축 (20분~1시간 → 10분)',
-      'Docker 컨테이너 환경 도입으로 로컬 의존성 제거, 개발·스테이징·프로덕션 환경 표준화',
-      'SNMP 프로토콜 기반 하드웨어 모니터링 대시보드 개발로 데이터센터 관리 효율화',
-      '한양대학교 학과평가 시스템 구축: FineReport와 PostgreSQL 집계 쿼리로 약 6년치 평가 자료·학교 통계 리포트 제공',
-      '표준 문서화 프로세스 도입으로 신규 입사자 온보딩 시간 단축',
-      'Git 브랜치 전략·커밋 메시지·DB 네이밍 컨벤션 정립으로 협업 비용 절감',
+      '고객사 납품용 하드웨어 모니터링 솔루션 개발',
+      '개발팀 인프라 구축·운영 (Docker 환경 표준화, GitLab·Jenkins 기반 CI/CD)',
+      '고객사 통계·리포트 시스템 개발 (한양대학교 학과평가 시스템, 통계 모니터링 웹)',
+      '개발 프로세스 정립 (표준 문서화, Git·DB 컨벤션)',
     ],
     tech: ['Java', 'Spring Boot', 'JPA', 'MySQL', 'PostgreSQL', 'Redis', 'Docker', 'Jenkins', 'Linux'],
   },
@@ -26,11 +25,9 @@ export const experiences: Experience[] = [
     end: '2024-08',
     summary: '고객사 웹 플랫폼 핵심 기능 개발 및 레거시 시스템 현대화',
     highlights: [
-      'JWT Access + Refresh Token 이중 인증/인가 시스템을 구현해 단일 토큰 방식의 탈취 취약점 보완',
-      'Redis 캐싱 도입으로 페이지 로드 속도 65% 개선 (1,000ms → 300~400ms)',
-      'AOP 패턴 기반 전사 웹 페이지 로깅 시스템을 구현해 사용자 행동 분석 기반 마련',
-      'RESTful API 아키텍처 구축으로 20건+ 신규 요구사항 효율적 반영',
-      '관리자 중심 퀴즈 관리 시스템 구축으로 운영의 개발자 의존 제거',
+      '대학 웹 플랫폼 개발 (인증 체계 개선, 성능 개선, 로깅 시스템)',
+      'LMS 웹 서비스 유지보수 및 운영 기능 개발 (퀴즈 관리, 설문·예약)',
+      'RESTful API 설계·구현으로 신규 요구사항 대응',
     ],
     tech: ['Java', 'Spring', 'PHP', 'JSP', 'MyBatis', 'Thymeleaf', 'JWT', 'Redis', 'MySQL', 'Linux', 'Apache'],
   },
