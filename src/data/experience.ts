@@ -15,7 +15,7 @@ export const experiences: Experience[] = [
       '표준 문서화 프로세스 도입으로 신규 입사자 온보딩 시간 50% 단축',
       'Git 브랜치 전략·커밋 메시지·DB 네이밍 컨벤션 정립으로 협업 비용 절감',
     ],
-    tech: ['Java', 'Spring Boot', 'JPA', 'MySQL', 'PostgreSQL', 'Redis', 'Docker', 'Kafka', 'Jenkins', 'Linux'],
+    tech: ['Java', 'Spring Boot', 'JPA', 'MySQL', 'PostgreSQL', 'Redis', 'Docker', 'Jenkins', 'Linux'],
   },
   {
     company: '에듀에듀',
