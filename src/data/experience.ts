@@ -16,7 +16,7 @@ export const experiences: Experience[] = [
       '고객사 통계·리포트 시스템 개발 (한양대학교 학과평가 시스템, 통계 모니터링 웹)',
       '개발 프로세스 정립 (표준 문서화, Git·DB 컨벤션, AI 협업 개발 워크플로우)',
     ],
-    tech: ['Java', 'Spring Boot', 'JPA', 'MySQL', 'PostgreSQL', 'Redis', 'Docker', 'Jenkins', 'Linux'],
+    tech: ['Java', 'Spring Boot', 'JPA', 'QueryDSL', 'Thymeleaf', 'MySQL', 'PostgreSQL', 'Oracle', 'Redis', 'Docker', 'Jenkins', 'Linux'],
   },
   {
     company: '에듀에듀',

@@ -211,15 +211,24 @@ html.js .reveal.is-visible {
    Print — PDF 저장 친화
    ============================================================ */
 @media print {
+  @page {
+    size: A4;
+    margin: 14mm 12mm;
+  }
+
   html {
     scroll-padding-top: 0;
   }
 
   body {
     background: #fff;
+    font-size: 0.92rem;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
-  .site-nav {
+  .site-nav,
+  .btn--print {
     display: none !important;
   }
 
@@ -230,11 +239,43 @@ html.js .reveal.is-visible {
   }
 
   .section {
-    padding-block: 1.5rem;
-    break-inside: avoid-page;
+    padding-block: 1.25rem;
+  }
+
+  .section--tint {
+    background: #fff;
+  }
+
+  /* 항목 중간에서 페이지가 끊기지 않게 */
+  .section-head,
+  .exp,
+  .proj,
+  .side-item,
+  .tl-row {
+    break-inside: avoid;
   }
 
   a {
     color: inherit;
+  }
+
+  /* A4 폭에서도 사진은 이름 옆에 */
+  .hero-inner {
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+
+  /* 히어로 버튼은 링크 텍스트 + URL로 (컴포넌트 스코프 스타일보다 우선) */
+  .hero-links a {
+    border: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+    color: var(--accent) !important;
+  }
+
+  .hero-links a::after {
+    content: ' ' attr(href);
+    font-weight: 400;
+    color: var(--ink-muted);
   }
 }
