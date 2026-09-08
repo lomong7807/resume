@@ -18,6 +18,20 @@ export const companyProjects: CompanyProject[] = [
     tech: ['Java', 'Spring Boot', 'JPA', 'MySQL', 'Redis', 'Docker'],
   },
   {
+    name: '한양대학교 학과평가 시스템 구축',
+    org: '라인업코리아',
+    start: '2025-08',
+    end: '2025-12',
+    summary:
+      '학부·대학원 학과평가 자료를 시스템에 업로드해 보관·관리하고, 여러 해에 걸친 평가 내용과 학생 수 같은 학교 전반의 통계를 한곳에서 확인할 수 있는 시스템입니다.',
+    work: [
+      'FineReport 기반으로 평가 자료 업로드·보관·관리 화면과 연도별 통계 리포트 구축',
+      '여러 해의 평가 데이터와 학생 수 등 학교 전반 통계를 집계하는 PostgreSQL 쿼리 설계·작성: 대량 데이터를 리포트에서 다루기 위해 집계 쿼리 중심으로 구성',
+      'JavaScript·HTML·CSS로 리포트 화면의 조회·동적 표시 기능 구현',
+    ],
+    tech: ['FineReport', 'PostgreSQL', 'JavaScript', 'HTML', 'CSS'],
+  },
+  {
     name: '개발·인프라 서버 구축 및 운영',
     org: '라인업코리아',
     start: '2025-04',
