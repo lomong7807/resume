@@ -12,7 +12,7 @@ export const experiences: Experience[] = [
     highlights: [
       '고객사 납품용 데이터센터 모니터링 솔루션(Rainbow) 개발 리드, 외주 C 수집기 인수·안정화',
       '공공기관 기록관리시스템(서울기록원) 고도화 및 웹 취약점 조치',
-      '개발팀 인프라 구축·운영 (Docker 환경 표준화, GitLab·Jenkins 기반 CI/CD)',
+      '개발팀 인프라 구축·운영 (Docker 환경 표준화, GitLab·Jenkins 기반 CI/CD 파이프라인 자동화)',
       '고객사 통계·리포트 시스템 개발 (한양대학교 학과평가 시스템, 통계 모니터링 웹)',
       '개발 프로세스 정립 (표준 문서화, Git·DB 컨벤션, AI 협업 개발 워크플로우)',
     ],

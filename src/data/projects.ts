@@ -12,8 +12,9 @@ export const companyProjects: CompanyProject[] = [
     work: [
       '서버실·랙·장비 3단 계층 관리와 상태 대시보드 개발',
       '장비 상태 판정 기준 단일화, 수집 에이전트 데이터의 IP 기준 매칭·주기 동기화',
-      'Jenkins 배포 파이프라인 구축 (헬스체크 실패 시 자동 롤백, 배포 이력 Notion 기록, Teams 알림)',
-      'MR 검증 CI 분리와 Gemini API 기반 AI 코드 리뷰 자동화',
+      'GitLab·Jenkins 기반 CI/CD 파이프라인 전 과정 자동화 (MR 검증부터 배포·롤백·알림까지)',
+      'MR 검증 CI: 빌드·테스트와 Gemini API 기반 AI 코드 리뷰 자동화',
+      '배포 파이프라인: 빌드 → 전송 → 재기동 → 헬스체크, 실패 시 자동 롤백, 배포 이력 Notion 기록·Teams 알림',
       '커밋 컨벤션·MR 템플릿과 Claude Code 훅·rules·skill 구성으로 AI 협업 개발 워크플로우 정립',
     ],
     tech: ['Java 17', 'Spring Boot 3', 'Spring Security', 'PostgreSQL', 'JPA', 'QueryDSL', 'Thymeleaf', 'Three.js', 'Jenkins', 'GitLab', 'Claude Code'],
@@ -94,7 +95,7 @@ export const companyProjects: CompanyProject[] = [
     summary: '개발팀의 배포와 소스 관리 환경을 재구축했습니다.',
     work: [
       'Docker 컨테이너 환경 표준화',
-      'GitLab·Jenkins 온프레미스 자체 구축, Webhook 기반 빌드·배포 자동화',
+      'GitLab·Jenkins 온프레미스 자체 구축, Webhook 기반 CI/CD 파이프라인으로 빌드·배포 전 과정 자동화',
       '저장소 자동 백업·모니터링, MS Teams 알림 연동',
       '표준 문서화 프로세스와 Git·DB 컨벤션 정립',
     ],
