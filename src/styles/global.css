@@ -91,7 +91,7 @@ ul {
 }
 
 .section {
-  padding-block: clamp(4rem, 9vw, 6.5rem);
+  padding-block: clamp(2.5rem, 5vw, 3.75rem);
 }
 
 .section + .section {
@@ -104,7 +104,7 @@ ul {
 }
 
 .section-head {
-  margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
+  margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
   display: flex;
   align-items: baseline;
   justify-content: space-between;
