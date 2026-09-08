@@ -15,6 +15,9 @@ import { profile } from '../data/profile';
             <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>
           </li>
         ))}
+        <li>
+          <button class="btn--print" type="button" onclick="window.print()">PDF로 저장</button>
+        </li>
       </ul>
     </div>
   </div>
@@ -62,6 +65,30 @@ import { profile } from '../data/profile';
 
   .footer-links a:hover {
     color: #ffffff;
+  }
+
+  /* 이력서 제출용 인쇄 버튼 — 눈에 띄지 않게 링크와 같은 톤 */
+  .btn--print {
+    font: inherit;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #9aa1a9;
+    background: none;
+    border: 1px solid #3a3e44;
+    border-radius: 4px;
+    padding: 0.15rem 0.6rem;
+    cursor: pointer;
+    transition: color 150ms ease, border-color 150ms ease;
+  }
+
+  .btn--print:hover {
+    color: #ffffff;
+    border-color: #9aa1a9;
+  }
+
+  /* JS가 없으면 동작하지 않으므로 숨긴다 */
+  html:not(.js) .btn--print {
+    display: none;
   }
 
   @media (max-width: 760px) {
