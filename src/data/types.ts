@@ -23,7 +23,7 @@ export interface Experience {
   /** YYYY-MM, 재직 중이면 null */
   end: string | null;
   summary: string;
-  /** `**굵게**`, `==수치 강조==` 인라인 마커 사용 가능 */
+  /** `**굵게**` 인라인 마커 사용 가능 */
   highlights: string[];
   tech: string[];
 }

@@ -152,13 +152,6 @@ ul {
   font-weight: 600;
 }
 
-/* 성과 수치 강조 */
-.num {
-  font-weight: 700;
-  color: var(--accent);
-  font-variant-numeric: tabular-nums;
-}
-
 /* 기술 스택 나열 한 줄 */
 .tech-line {
   font-size: 0.85rem;

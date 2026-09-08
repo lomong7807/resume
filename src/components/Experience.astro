@@ -27,7 +27,10 @@ const totalLabel = `총 ${[years > 0 && `${years}년`, restMonths > 0 && `${rest
       <li class="exp reveal">
         <div class="exp-side">
           <span class="meta">{period(exp.start, exp.end)}</span>
-          <h3 class="exp-company">{exp.company}</h3>
+          <h3 class="exp-company">
+            {exp.company}
+            {exp.end === null && <span class="exp-current">재직 중</span>}
+          </h3>
           <p class="exp-role">{exp.role}</p>
           <p class="exp-team">{exp.team}</p>
         </div>
@@ -68,6 +71,19 @@ const totalLabel = `총 ${[years > 0 && `${years}년`, restMonths > 0 && `${rest
     font-weight: 700;
     line-height: 1.35;
     letter-spacing: -0.01em;
+  }
+
+  .exp-current {
+    display: inline-block;
+    vertical-align: 0.15em;
+    margin-left: 0.35rem;
+    padding: 0.05rem 0.45rem;
+    border-radius: 4px;
+    background: var(--accent-wash);
+    color: var(--accent-deep);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0;
   }
 
   .exp-role {
