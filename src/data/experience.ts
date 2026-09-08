@@ -9,10 +9,10 @@ export const experiences: Experience[] = [
     end: null,
     summary: '하드웨어 모니터링 솔루션 개발과 개발팀 인프라 환경 구축·운영 총괄',
     highlights: [
-      'GitLab·Jenkins 기반 CI/CD 파이프라인 구축으로 배포 시간 95% 단축 (10분~1시간 → 1분)',
+      'GitLab·Jenkins 기반 CI/CD 파이프라인 구축으로 배포 시간 단축 (20분~1시간 → 10분)',
       'Docker 컨테이너 환경 도입으로 로컬 의존성 제거, 개발·스테이징·프로덕션 환경 표준화',
       'SNMP 프로토콜 기반 하드웨어 모니터링 대시보드 개발로 데이터센터 관리 효율화',
-      '표준 문서화 프로세스 도입으로 신규 입사자 온보딩 시간 50% 단축',
+      '표준 문서화 프로세스 도입으로 신규 입사자 온보딩 시간 단축',
       'Git 브랜치 전략·커밋 메시지·DB 네이밍 컨벤션 정립으로 협업 비용 절감',
     ],
     tech: ['Java', 'Spring Boot', 'JPA', 'MySQL', 'PostgreSQL', 'Redis', 'Docker', 'Jenkins', 'Linux'],

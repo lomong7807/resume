@@ -11,32 +11,35 @@ const period = (start: string, end: string | null) => `${ym(start)} - ${end ? ym
   <ul>
     {companyProjects.map((project) => (
       <li class="proj reveal">
-        <header class="proj-head">
+        <div class="proj-side">
+          <span class="meta">{period(project.start, project.end)}</span>
+          <p class="proj-org">{project.org}</p>
+        </div>
+
+        <div class="proj-body">
           <h3 class="proj-name">{project.name}</h3>
-          <span class="meta">{project.org} · {period(project.start, project.end)}</span>
-        </header>
+          <p class="proj-summary">{project.summary}</p>
 
-        <p class="proj-summary">{project.summary}</p>
-
-        <ul class="bullets">
-          {project.work.map((item) => (
-            <li>{item}</li>
-          ))}
-        </ul>
-
-        {project.outcome && (
-          <ul class="proj-outcome">
-            {project.outcome.map((item) => (
+          <ul class="bullets">
+            {project.work.map((item) => (
               <li>{item}</li>
             ))}
           </ul>
-        )}
 
-        <ul class="tech-list">
-          {project.tech.map((tech) => (
-            <li class="tech-tag">{tech}</li>
-          ))}
-        </ul>
+          {project.outcome && (
+            <ul class="proj-outcome">
+              {project.outcome.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          )}
+
+          <ul class="tech-list">
+            {project.tech.map((tech) => (
+              <li class="tech-tag">{tech}</li>
+            ))}
+          </ul>
+        </div>
       </li>
     ))}
   </ul>
@@ -47,17 +50,15 @@ const period = (start: string, end: string | null) => `${ym(start)} - ${end ? ym
       <ul class="side-grid">
         {sideProjects.map((project) => (
           <li class="side-item reveal">
-            <header class="side-head">
-              <h4 class="side-name">{project.name}</h4>
-              <span class="meta">{project.period}</span>
-            </header>
+            <span class="meta">{project.period}</span>
+            <h4 class="side-name">{project.name}</h4>
             <p class="side-body">{project.description}</p>
             <p class="side-role">{project.role}</p>
             <ul class="tech-list">
-          {project.tech.map((tech) => (
-            <li class="tech-tag">{tech}</li>
-          ))}
-        </ul>
+              {project.tech.map((tech) => (
+                <li class="tech-tag">{tech}</li>
+              ))}
+            </ul>
             <a class="side-link" href={project.repo} target="_blank" rel="noopener noreferrer">
               GitHub에서 보기
             </a>
@@ -69,7 +70,11 @@ const period = (start: string, end: string | null) => `${ym(start)} - ${end ? ym
 </Section>
 
 <style>
+  /* 경력 섹션과 같은 2컬럼: 왼쪽 기간·소속, 오른쪽 내용 */
   .proj {
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    gap: 2rem;
     padding-block: 1.75rem;
   }
 
@@ -81,13 +86,10 @@ const period = (start: string, end: string | null) => `${ym(start)} - ${end ? ym
     border-bottom: 1px solid var(--line);
   }
 
-  .proj-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 1.1rem;
+  .proj-org {
+    margin-top: 0.2rem;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
   }
 
   .proj-name {
@@ -95,6 +97,7 @@ const period = (start: string, end: string | null) => `${ym(start)} - ${end ? ym
     font-weight: 700;
     letter-spacing: -0.01em;
     line-height: 1.35;
+    margin-bottom: 0.6rem;
   }
 
   .proj-summary {
@@ -138,15 +141,8 @@ const period = (start: string, end: string | null) => `${ym(start)} - ${end ? ym
     gap: 2.25rem 2.5rem;
   }
 
-  .side-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
-
   .side-name {
+    margin-top: 0.2rem;
     font-size: 1rem;
     font-weight: 700;
   }
@@ -175,9 +171,10 @@ const period = (start: string, end: string | null) => `${ym(start)} - ${end ? ym
   }
 
   @media (max-width: 760px) {
-    .proj-head {
-      flex-direction: column;
-      gap: 0.3rem;
+    .proj {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      padding-block: 1.4rem;
     }
 
     .side-grid {

@@ -16,5 +16,5 @@ export const profile = {
 export const seo = {
   title: '강윤수 | Backend & DevOps Engineer',
   description:
-    'Java/Spring 백엔드 개발과 Docker·Jenkins 기반 DevOps 환경 구축을 함께 하는 개발자 강윤수의 포트폴리오. CI/CD 자동화로 배포 시간 95% 단축, Redis 캐싱으로 페이지 로드 65% 개선.',
+    'Java/Spring 백엔드 개발과 Docker·Jenkins 기반 DevOps 환경 구축을 함께 하는 개발자 강윤수의 포트폴리오. CI/CD 자동화로 배포 시간을 20분~1시간에서 10분으로 단축, Redis 캐싱으로 페이지 로드 65% 개선.',
 };
