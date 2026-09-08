@@ -3,3 +3,6 @@ dist/
 .astro/
 .DS_Store
 npm-debug.log*
+
+# 비공개 메모 (프로젝트 상세 근거·예상 면접 질문) — 저장소가 공개라 커밋하지 않는다
+notes/
