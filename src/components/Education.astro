@@ -3,14 +3,14 @@ import Section from './Section.astro';
 import { education, etc } from '../data/education';
 import type { TimelineItem } from '../data/types';
 
-const groups: { label: string; items: TimelineItem[] }[] = [
-  { label: '학력', items: education },
-  { label: '활동·기타', items: etc },
+const groups: { label: string; items: TimelineItem[]; ongoing: string }[] = [
+  { label: '학력', items: education, ongoing: '재학 중' },
+  { label: '활동·기타', items: etc, ongoing: '현재' },
 ];
 
-/** 'YYYY-MM' 데이터를 'YYYY.MM - YYYY.MM' 표기로 변환한다. */
-const period = ({ start, end }: TimelineItem) =>
-  `${start.replace('-', '.')} - ${end.replace('-', '.')}`;
+/** 'YYYY-MM' 데이터를 'YYYY.MM - YYYY.MM' 표기로 변환한다. end가 null이면 진행 중 라벨 */
+const period = ({ start, end }: TimelineItem, ongoing: string) =>
+  `${start.replace('-', '.')} - ${end ? end.replace('-', '.') : ongoing}`;
 ---
 
 <Section id="education" title="학력 및 활동" tint>
@@ -20,7 +20,7 @@ const period = ({ start, end }: TimelineItem) =>
       <ul>
         {group.items.map((item) => (
           <li class="tl-row reveal">
-            <span class="meta">{period(item)}</span>
+            <span class="meta">{period(item, group.ongoing)}</span>
             <div>
               <h4 class="tl-title">{item.title}</h4>
               <p class="tl-detail">{item.detail}</p>

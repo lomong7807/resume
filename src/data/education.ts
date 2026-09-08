@@ -2,6 +2,12 @@ import type { TimelineItem } from './types';
 
 export const education: TimelineItem[] = [
   {
+    title: '한국방송통신대학교',
+    detail: '컴퓨터과학과 편입',
+    start: '2026-03',
+    end: null,
+  },
+  {
     title: '동서대학교',
     detail: '국제물류학 학사 졸업',
     start: '2016-03',

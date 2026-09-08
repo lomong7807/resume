@@ -32,7 +32,11 @@ const period = (start: string, end: string | null) => `${ym(start)} - ${end ? ym
           </ul>
         )}
 
-        <p class="tech-line">{project.tech.join(', ')}</p>
+        <ul class="tech-list">
+          {project.tech.map((tech) => (
+            <li class="tech-tag">{tech}</li>
+          ))}
+        </ul>
       </li>
     ))}
   </ul>
@@ -49,7 +53,11 @@ const period = (start: string, end: string | null) => `${ym(start)} - ${end ? ym
             </header>
             <p class="side-body">{project.description}</p>
             <p class="side-role">{project.role}</p>
-            <p class="tech-line">{project.tech.join(', ')}</p>
+            <ul class="tech-list">
+          {project.tech.map((tech) => (
+            <li class="tech-tag">{tech}</li>
+          ))}
+        </ul>
             <a class="side-link" href={project.repo} target="_blank" rel="noopener noreferrer">
               GitHub에서 보기
             </a>
@@ -106,7 +114,7 @@ const period = (start: string, end: string | null) => `${ym(start)} - ${end ? ym
     font-variant-numeric: tabular-nums;
   }
 
-  .proj .tech-line {
+  .proj .tech-list {
     margin-top: 1.1rem;
   }
 
@@ -155,7 +163,7 @@ const period = (start: string, end: string | null) => `${ym(start)} - ${end ? ym
     color: var(--ink-muted);
   }
 
-  .side-item .tech-line {
+  .side-item .tech-list {
     margin-top: 0.6rem;
   }
 

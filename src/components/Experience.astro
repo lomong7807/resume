@@ -20,7 +20,7 @@ const totalLabel = `총 ${[years > 0 && `${years}년`, restMonths > 0 && `${rest
 ---
 
 <Section id="experience" title="경력">
-  <span class="meta" slot="head-meta">{totalLabel}</span>
+  <span class="badge" slot="head-meta">{totalLabel}</span>
 
   <ol>
     {experiences.map((exp) => (
@@ -42,7 +42,11 @@ const totalLabel = `총 ${[years > 0 && `${years}년`, restMonths > 0 && `${rest
               <li set:html={inline(highlight)} />
             ))}
           </ul>
-          <p class="tech-line">{exp.tech.join(', ')}</p>
+          <ul class="tech-list">
+            {exp.tech.map((tech) => (
+              <li class="tech-tag">{tech}</li>
+            ))}
+          </ul>
         </div>
       </li>
     ))}
@@ -83,7 +87,6 @@ const totalLabel = `총 ${[years > 0 && `${years}년`, restMonths > 0 && `${rest
     color: var(--accent-deep);
     font-size: 0.72rem;
     font-weight: 600;
-    letter-spacing: 0;
   }
 
   .exp-role {
@@ -103,7 +106,7 @@ const totalLabel = `총 ${[years > 0 && `${years}년`, restMonths > 0 && `${rest
     font-weight: 600;
   }
 
-  .exp-body .tech-line {
+  .exp-body .tech-list {
     margin-top: 1rem;
   }
 

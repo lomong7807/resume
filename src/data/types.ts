@@ -55,5 +55,6 @@ export interface TimelineItem {
   title: string;
   detail: string;
   start: string;
-  end: string;
+  /** YYYY-MM, 진행 중이면 null */
+  end: string | null;
 }

@@ -152,11 +152,33 @@ ul {
   font-weight: 600;
 }
 
-/* 기술 스택 나열 한 줄 */
-.tech-line {
-  font-size: 0.85rem;
-  color: var(--ink-muted);
-  line-height: 1.6;
+/* 사용 기술 태그 목록 */
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.tech-tag {
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  background: #eef1f4;
+  color: var(--ink-soft);
+}
+
+/* 강조 배지 (총 경력, 재직 중) */
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  background: var(--accent-wash);
+  color: var(--accent-deep);
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
 }
 
 /* ============================================================
