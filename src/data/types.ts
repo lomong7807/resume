@@ -3,11 +3,6 @@ export interface ExternalLink {
   url: string;
 }
 
-export interface AboutPoint {
-  title: string;
-  body: string;
-}
-
 export interface SkillItem {
   name: string;
   /** 주력 기술 여부 — 칩 강조 표시 */
