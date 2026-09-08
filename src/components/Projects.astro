@@ -2,9 +2,10 @@
 import Section from './Section.astro';
 import { companyProjects, sideProjects } from '../data/projects';
 
-/** YYYY-MM → YYYY.MM, end가 null이면 "진행 중" */
+/** YYYY-MM → YYYY.MM, end가 null이면 "진행 중", 시작·종료가 같은 달이면 한 번만 표기 */
 const ym = (value: string) => value.replace('-', '.');
-const period = (start: string, end: string | null) => `${ym(start)} - ${end ? ym(end) : '진행 중'}`;
+const period = (start: string, end: string | null) =>
+  end === start ? ym(start) : `${ym(start)} - ${end ? ym(end) : '진행 중'}`;
 ---
 
 <Section id="projects" title="프로젝트">

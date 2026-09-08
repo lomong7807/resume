@@ -37,6 +37,7 @@ export const skills: SkillCategory[] = [
       { name: 'Vim' },
       { name: 'GitHub' },
       { name: 'GitLab' },
+      { name: 'Claude Code', primary: true },
       { name: 'MS Teams' },
     ],
   },
