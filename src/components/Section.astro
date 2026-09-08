@@ -11,9 +11,18 @@ const { id, title, tint = false } = Astro.props;
 <section class:list={['section', { 'section--tint': tint }]} id={id}>
   <div class="container">
     <header class="section-head reveal">
-      <h2 class="section-title">{title}</h2>
+      <h2 class="section-title">
+        {title}<span class="section-dot" aria-hidden="true">.</span>
+      </h2>
       <slot name="head-meta" />
     </header>
     <slot />
   </div>
 </section>
+
+<style>
+  /* 히어로 이름의 코발트 마침표를 섹션 제목에도 반복해 대메뉴 시작점을 표시 */
+  .section-dot {
+    color: var(--accent);
+  }
+</style>
