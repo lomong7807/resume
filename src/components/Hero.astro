@@ -6,7 +6,7 @@ import { withBase } from '../lib/url';
 <header class="hero" id="top">
   <div class="container hero-inner reveal">
     <div class="hero-text">
-      <h1 class="hero-name">{profile.name}<span class="hero-dot" aria-hidden="true">.</span></h1>
+      <h1 class="hero-name">{profile.name}</h1>
       <p class="hero-role">{profile.role}</p>
       <p class="hero-tagline">{profile.tagline}</p>
       <div class="hero-links">
@@ -51,10 +51,6 @@ import { withBase } from '../lib/url';
     font-weight: 800;
     letter-spacing: -0.03em;
     line-height: 1.12;
-  }
-
-  .hero-dot {
-    color: var(--accent);
   }
 
   .hero-role {
