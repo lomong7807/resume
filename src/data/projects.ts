@@ -41,13 +41,12 @@ export const companyProjects: CompanyProject[] = [
     start: '2026-08',
     end: '2026-08',
     summary:
-      '서울기록원 영구기록물관리시스템의 외부 보안 진단 지적 6건(인가, 경로 추적, 파일 업로드, Stored XSS, TLS)을 조치했습니다.',
+      '서울기록원 영구기록물관리시스템의 외부 보안 진단에서 지적된 인가, 경로 추적, 파일 업로드, Stored XSS 취약점을 조치했습니다.',
     work: [
       '인가 검사를 서버 측 라우팅 경로 기준으로 재구성, 인코딩·path parameter 우회 차단',
       '파일 업로드 허용목록 전환, 경로 추적 정규화 봉쇄',
       'Stored XSS 출력 인코딩 처리 (벤더 JS innerHTML 분기 수정)',
       '테스트가 없던 코드베이스에 단위테스트 78건 추가',
-      'TLS 항목은 원인 분석 후 인프라팀 이관',
     ],
     outcome: ['조치 후 재진단 통과'],
     tech: ['Java', 'Spring Security', 'Spring MVC', 'JUnit', 'Claude Code'],
