@@ -59,11 +59,29 @@ const { frontmatter } = Astro.props;
     line-height: 1.35;
   }
 
+  /* 항목 소제목(프로젝트 설명, 배경과 문제 …): 코발트 사각 마커로 본문과 구분 */
   .doc h4 {
-    margin-top: 1.2rem;
-    font-size: 0.85rem;
+    margin-top: 1.6rem;
+    font-size: 0.95rem;
     font-weight: 700;
-    color: var(--ink-muted);
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .doc h4::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 2px;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .doc h4 + p,
+  .doc h4 + ul {
+    margin-top: 0.4rem;
   }
 
   .doc p {
