@@ -1,22 +1,29 @@
 ---
 import { profile } from '../data/profile';
+import { withBase } from '../lib/url';
 
-const items = [
-  { href: '#about', label: '소개' },
-  { href: '#skills', label: '기술' },
-  { href: '#experience', label: '경력' },
-  { href: '#projects', label: '프로젝트' },
-  { href: '#education', label: '학력·활동' },
+const home = withBase('');
+const sections = [
+  { id: 'about', label: '소개' },
+  { id: 'skills', label: '기술' },
+  { id: 'experience', label: '경력' },
+  { id: 'projects', label: '프로젝트' },
+  { id: 'education', label: '학력·활동' },
 ];
+const careerPath = withBase('career/');
+const onCareer = Astro.url.pathname.replace(/\/$/, '') === careerPath.replace(/\/$/, '');
 ---
 
 <nav class="site-nav" aria-label="섹션 이동">
   <div class="container nav-inner">
-    <a class="brand" href="#top">{profile.name}</a>
+    <a class="brand" href={home}>{profile.name}</a>
     <ul class="nav-links">
-      {items.map((item) => (
-        <li><a href={item.href}>{item.label}</a></li>
+      {sections.map((section) => (
+        <li><a href={`${home}#${section.id}`}>{section.label}</a></li>
       ))}
+      <li>
+        <a href={careerPath} class:list={[{ 'is-active': onCareer }]}>경력기술서</a>
+      </li>
     </ul>
   </div>
 </nav>

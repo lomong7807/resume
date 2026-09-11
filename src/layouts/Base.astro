@@ -5,11 +5,13 @@ import { withBase } from '../lib/url';
 interface Props {
   title: string;
   description: string;
+  /** base 이후의 페이지 경로 (예: 'career/'). 기본은 홈 */
+  path?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, path = '' } = Astro.props;
 const ogImage = new URL(withBase('og.png'), Astro.site);
-const canonical = new URL(withBase(''), Astro.site);
+const canonical = new URL(withBase(path), Astro.site);
 ---
 
 <!doctype html>
@@ -61,7 +63,7 @@ const canonical = new URL(withBase(''), Astro.site);
       revealed.forEach((el) => io.observe(el));
 
       // 네비 스크롤 스파이
-      const navLinks = document.querySelectorAll<HTMLAnchorElement>('.site-nav a[href^="#"]');
+      const navLinks = document.querySelectorAll<HTMLAnchorElement>('.site-nav a[href*="#"]');
       const sections = [...navLinks]
         .map((link) => document.getElementById(link.hash.slice(1)))
         .filter((s): s is HTMLElement => s !== null);
